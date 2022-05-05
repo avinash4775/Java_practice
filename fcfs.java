@@ -23,7 +23,7 @@ int[]ct=new int[num];
 int[]wt=new int[num];
 int[]tat=new int[num];
 for(i=0;i<num;i++)
-{
+{ min=Integer.MAX_VALUE;
    for(j=0;j<num;j++)
    {
        if(min>at[j]&&at[j]>-1)
