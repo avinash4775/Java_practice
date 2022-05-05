@@ -4,6 +4,7 @@ public class Main
 public static void main(String[] args) {
    Scanner sc=new Scanner(System.in);
    int i,num,min=Integer.MAX_VALUE,sel=-1,j,t=0;
+   float sum1=0,sum2=0;
 System.out.println("Enter the number of process:");
 num=sc.nextInt();
 int[]at=new int[num];
@@ -38,9 +39,22 @@ for(i=0;i<num;i++)
    wt[sel]=tat[sel]-bt[sel];
    at[sel]=-1;
 }
+
+for(i=0;i<num;i++)
+{
+sum1=sum1+tat[i];
+sum2=sum2+wt[i];
+}
+
 System.out.println("Ct | tat  |wt");
 for(i=0;i<num;i++)
 System.out.println(ct[i]+" ,"+tat[i]+" ,"+wt[i]);
 
+System.out.println("Average waiting time is: ");
+System.out.println(sum2/num);
+System.out.println("Average turn around time is: ");
+System.out.println(sum1/num);
 }
+
+
 }
