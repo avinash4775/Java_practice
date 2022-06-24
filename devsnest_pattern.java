@@ -31,7 +31,7 @@
 // 15 < N < 303
 // M is an odd natural number, and N is 3 times M.
 
-
+//METHOD 1
 
 static String[] solve(int M, int N){
 //CODE HERE 
@@ -73,6 +73,36 @@ str3="-"+str3+"-";
     sb1.reverse();
     str2=str2+str1+sb1.toString();
     res[l++]=str2;
+  }
+  return res;
+}
+
+
+//METHOD 2
+
+static String[] solve(int M, int N){
+//CODE HERE 
+String []res=new String[M];
+int i=0,j=0,k=0,l=0;
+String str1=".|.";
+String str2="";
+for(i=1;i<=M/2;i++)
+{   str2="";
+    for(k=0;k<2*i-1;k++)
+    str2=str2+str1;
+    for(j=1;j<=(N-3*k)/2;j++)
+    {
+        str2="-"+str2+"-";
+    }
+    res[l++]=str2;
+}
+String str3="DEVSNEST!";
+for(i=0;i<(N-9)/2;i++)
+str3="-"+str3+"-";
+  res[l++]=str3;
+  for(i=M/2-1;i>=0;i--)
+  {
+    res[l++]=res[i];
   }
   return res;
 }
